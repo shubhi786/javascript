@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS COLOR EFFECT</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      .pallete {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .pallete div {
+        flex: 1;
+        cursor: pointer;
+      }
+
+      #block {
+        width: 80%;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0.5);
+        margin-top: 2%;
+        margin-left: 10%;
+        border-radius: 10px;
+        -webkit-box-shadow: 6px 7px 28px -1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 6px 7px 28px -1px rgba(0, 0, 0, 0.75);
+        box-shadow: 6px 7px 28px -1px rgba(0, 0, 0, 0.75);
+      }
+
+      .place button {
+        margin-top: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        width: 100px;
+        height: 50px;
+        border: none;
+        border-radius: 10px;
+        color: aliceblue;
+        cursor: pointer;
+        margin-left: 47%;
+        margin-top: 5%;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="pallete">
+      <div
+        id="red"
+        class="red"
+        style="background-color: red; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+      ></div>
+      <div
+        id="green"
+        class="green"
+        style="background-color: green; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+      ></div>
+      <div
+        class="blue"
+        style="background-color: blue; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+        id="blue"
+      ></div>
+      <div
+        class="yellow"
+        style="background-color: yellow; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+        id="yellow"
+      ></div>
+      <div
+        class="purple"
+        style="background-color: purple; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+        id="purple"
+      ></div>
+      <div
+        class="skyblue"
+        style="background-color: skyblue; width: 100px; height: 100px;"
+        onclick="color(this.id)"
+        id="skyblue"
+      ></div>
+    </section>
+
+    <section id="block"></section>
+
+    <section class="place"></section>
+
+    <script type="text/javascript">
+      let element = document.createElement("button");
+
+      let node = document.createTextNode("RELOAD");
+
+      element.appendChild(node);
+
+      element.className = "new";
+      element.id = "new";
+      element.setAttribute("onclick", "rel()");
+
+      let app = document.querySelector(".place");
+
+      app.appendChild(element);
+
+      console.log(app);
+
+      // console.log(window);
+
+      function rel() {
+        window.location.reload();
+      }
+
+      function color(clicked_id) {
+        let change = (document.getElementById(
+          "block"
+        ).style.backgroundColor = clicked_id);
+
+        // let select = clicked_id;
+
+        // change.style.backgroundColor = select;
+
+        // console.log(select);
+      }
+
+      // function red() {
+      //   let color = (document.getElementById("block").style.backgroundColor =
+      //     "red");
+      // }
+    </script>
+  </body>
+</html>

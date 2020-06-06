@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVENTS</title>
+  </head>
+  <body>
+    <div class="test" id="test">
+      <h1 id="heading" class="heading">click</h1>
+    </div>
+
+    <div class="test2" id="test2">
+      <button class="btn" id="btn">check</button>
+    </div>
+
+    <div
+      class="container"
+      style="width: 300px; height: 300px; border: 1px solid black;"
+    ></div>
+
+    <script type="text/javascript">
+      console.log("hello");
+
+      //   document
+      //     .getElementById("heading")
+      //     .addEventListener("click", function (e) {
+      //       // e is event object
+      //       console.log("clicked");
+
+      //       //   console.log(e.target); // target shows the element which is clicked.
+
+      //       //   console.log(e.target.className);
+
+      //       //   console.log(e.target.id);
+
+      //       //   console.log(e.target.classList);
+
+      //       //   console.log(e.offsetX); // shows the location of the click horizontally
+
+      //       //   console.log(e.offsetY); // shows the location of the click vertically
+
+      //       //   console.log(e.clientX); // shows the location of the click from the browser window
+
+      //       //   console.log(e.clientY); // shows the location of the click from the browser window
+      //     });
+
+      //   document.getElementById("test2").addEventListener("click", func);
+
+      //   document.getElementById("test2").addEventListener("dblclick", func2);
+
+      //   //   document.getElementById("test2").addEventListener("mousedown", func2); //it acts like the click event but it accepts all the clicks or mouse wheel activity
+
+      //   function func2(e) {
+      //     console.log("double done");
+      //   }
+
+      //   function func(e) {
+      //     console.log("done");
+      //     e.preventDefault();
+      //   }
+
+      //   document
+      //     .getElementById("test2")
+      //     .addEventListener("mouseenter", function (e) {
+      //       console.log("you entered");
+      //     });
+
+      //   document
+      //     .getElementById("test2")
+      //     .addEventListener("mouseleave", function (e) {
+      //       console.log("you exited");
+      //     });
+
+      document
+        .querySelector(".container")
+        .addEventListener("mousemove", function (e) {
+          //  console.log(e.offsetX, e.offsetY);
+
+          console.log(e.offsetX, e.offsetY);
+
+          document.body.style.backgroundColor = `rgb( ${e.offsetX} , ${e.offsetY}, ${e.offsetX})`;
+        });
+    </script>
+  </body>
+</html>

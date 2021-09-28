@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <STYLE>
+        @font-face {
+            font-family: 'digital-7regular';
+            src: url('fonts/digital-7-webfont.woff2') format('woff2'),
+                url('fonts/digital-7-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+
+        h1 {
+            font-size: 200px;
+            text-align: center;
+            font-family: 'digital-7regular';
+        }
+    </STYLE>
+</head>
+
+<body>
+
+    <h1 class="timer"></h1>
+
+    <script>
+
+        let showTimer = document.querySelector('.timer');
+        let ww = '';
+
+        class Timer {
+
+            // constructor(val) 
+            // {
+            //     this.startVal = val;
+            // }
+
+            startTimer(startVal) {
+                let startTime = startVal;
+
+                ww = setInterval(function () {
+                    startTime += 1;
+                    showTimer.innerHTML = startTime;
+                }, 1000);
+            }
+
+            stopTimer() {
+                clearInterval(ww);
+            }
+
+        }
+
+        let timer = new Timer();
+
+        timer.startTimer(10);
+
+        setTimeout(timer.stopTimer, 4000);
+
+    </script>
+</body>
+
+</html>
